@@ -14,10 +14,10 @@ app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.raw());
 app.use(express.json());
 app.use(cookieParser());
-// app.use(cors({
-//     credentials: true,
-//     origin: process.env.CLIENT_URL,
-// }));
+app.use(cors({
+    credentials: true,
+    origin: process.env.CLIENT_URL,
+}));
 app.use('/api', router);
 
 const start = async () => {
